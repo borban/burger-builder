@@ -18,7 +18,7 @@ const INGREDIENT_PRICES = {
 class BurgerBuilder extends Component {
   state = {
     ingredients: null,
-    totalPrice: 4,
+    totalPrice: 0,
     purchaseable: false,
     purchasing: false,
     loading: false,
@@ -98,7 +98,6 @@ class BurgerBuilder extends Component {
     }
     queryParams.push("price=" + this.state.totalPrice);
     const queryString = queryParams.join("&");
-
     this.props.history.push({
       pathname: "/checkout",
       search: "?" + queryString
